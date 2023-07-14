@@ -12,12 +12,11 @@ Check [project website](https://dki-lab.github.io/LLM-Planner/) for an overview 
 If you find this code useful, please consider citing our paper:
 
 ```
-@misc{song2023llmplanner,
-      title={LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models}, 
-      author={Chan Hee Song and Jiaman Wu and Clayton Washington and Brian M. Sadler and Wei-Lun Chao and Yu Su},
-      year={2023},
-      eprint={2212.04088},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI}
+@InProceedings{song2023llmplanner,
+  author    = {Song, Chan Hee and Wu, Jiaman and Washington, Clayton and Sadler, Brian M. and Chao, Wei-Lun and Su, Yu},
+  title     = {LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month     = {October},
+  year      = {2023},
 }
 ```
