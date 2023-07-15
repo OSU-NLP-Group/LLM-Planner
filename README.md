@@ -5,8 +5,8 @@ Code for [LLM-Planner](https://arxiv.org/abs/2212.04088).
 Check [project website](https://dki-lab.github.io/LLM-Planner/) for an overview and a demo.
 
 ## News:
-- Jul 23 : LLM-Planner has been accepted to ICCV 2023! Catch us on Paris this October.
-- Jul 23 : We will release the code soon! Thanks for your interests.
+- Jul 23: LLM-Planner has been accepted to ICCV 2023! Catch us in Paris this October.
+- Jul 23: We will release the code soon! Thanks for your interests.
 
 ## Citation Information
 
