@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Apply Large Language Models (LLMs) such as GPT-3 to generate high-level plans for embodied AI tasks.">
+  <meta name="keywords" content="GPT-3, LLM, Large Language Model, Embodied AI, Few-shot">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM-Planner: Few-Shot Grounded Planning with Large Language Models</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://chanh.ee/">Chan Hee Song</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/work4cs/">Jiaman Wu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              Clayton Washington<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=s9eCQn4AAAAJ&hl=en">Brian M. Sadler</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/wei-lun-harry-chao?pli=1">Wei-Lun Chao</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ysu1989.github.io/">Yu Su</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The Ohio State University,</span>
+            <span class="author-block"><sup>2</sup>DEVCOM ARL</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2212.04088.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2212.04088"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/OSU-NLP-Group/LLM-Planner/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming soon here)</span>
+                </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/askforalfred/alfred"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                </a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">LLM-Planner</span> performs dynamic and grounded few-shot planning for embodied AI agents.
+      </h2>
+      <video id="teaser" autoplay muted loop playsinline height="110%">
+        <source src="./static/images/demo.mp4"
+                type="video/mp4">
+      </video>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <p><b>Overview:</b> <span class="dnerf">LLM-Planner</span> continuously updates the high-level plans based on the feedback from the environment.</p>
+      </div>	
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-fullwidth">
+          <div class="column is-full-width">
+            <img src="./static/images/intro.png" width="60%"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>This study focuses on using large language models (LLMs) as a planner for embodied agents that can follow natural language instructions to complete complex tasks in a visually-perceived environment. The high data cost and poor sample efficiency of existing methods hinders the development of versatile agents that are capable of many tasks and can learn new tasks quickly.
+          </p>
+          <p>In this work, we propose a novel method, <span class="dnerf">LLM-Planner</span>, that harnesses the power of large language models to do few-shot planning for embodied agents. We further propose a simple but effective way to enhance LLMs with physical grounding to generate and update plans that are grounded in the current environment.
+          </p>
+          <p>Experiments on the ALFRED dataset show that our method can achieve very competitive few-shot performance: Despite using less than 0.5% of paired training data, <span class="dnerf">LLM-Planner</span> achieves competitive performance with recent baselines that are trained using the full training data. Existing methods can barely complete any task successfully under the same few-shot setting. Our work opens the door for developing versatile and sample-efficient embodied agents that can quickly learn many tasks. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        
+        <h2 class="title is-3">Method</h2>
+        <!-- <img src="./static/images/figure1.png"/>
+        <div class="content has-text-justified">
+          <p>
+            At the first step, LLM-Planner prompts GPT-3 to generate a high-level plan. During the following steps, LLM-Planner re-plans with visually observed information from the environment when the execution has failed too many times or the agents has taken too many steps.
+          </p>
+        </div> -->
+        
+        <img src="./static/images/figure2.png"/>
+        <div class="content has-text-justified">
+          <p>
+            The prompt includes an explanation of the task, a list of possible high-level actions, 9 in-context examples selected by the kNN retriever from 100 training examples, and a current test example. For dynamic grounded re-planning, we add the subgoals that have been completed and the list of objects observed in the environment.
+          </p>
+          <p>
+            We only use 100 pairs of trajectory-instruction training data to retrieve in-context examples and to tune all the hyperparamters. Therefore, our work is under the true few-shot setting. 
+          </p>
+        </div>
+        
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+       <!--    <p>
+            There are three metrics: high-level planning accuracy (HLP ACC), success rate (SR) and goal-condition success rate (GC).
+          </p> -->
+          <p>
+            HLP ACC is the percentage of the correct prediction of HLP compared to the ground-truth of HLP for all episode. Only if a prediction of HLP in an episode exactly matches the ground-truth, we consider the prediction as a correct one. For the definition of SR, please refer to <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Shridhar_ALFRED_A_Benchmark_for_Interpreting_Grounded_Instructions_for_Everyday_Tasks_CVPR_2020_paper.pdf">ALFRED</a>. 
+          </p>
+          <p>
+            We integrated <span class="dnerf">LLM-Planner</span> with HLSM and evaluated its performance on ALFRED dataset. Despite using less than 0.5% of paired training data, <span class="dnerf">LLM-Planner</span> achieved competitive performance compared to models trained on full data and even outperformed multiple other baselines that were trained using the full data. 
+          </p>
+          
+          <table class="table is-bordered" style="text-align: center">
+            <colgroup>
+              <col span="1" style="background-color:whitesmoke">
+              <col span="2" style="background-color:floralwhite">
+            </colgroup>
+            <tr>
+              <th rowspan="2" style="text-align: left">Training Data</td>
+              <th rowspan="2" style="text-align: left">Instruction</td>
+              <th rowspan="2" style="text-align: left">Model</td>
+              <th colspan="1">Test Unseen</th>
+              <th colspan="2">Valid Unseen</th>
+            </tr>
+            <tr>
+              <th scope="col">SR</th>
+              <!-- <th scope="col">GC</th> -->
+              <th scope="col">SR</th>
+              <!-- <th scope="col">GC</th> -->
+              <th scope="col">HLP ACC</th>
+            </tr>
+            <tr>
+              <th rowspan="5" style="text-align: left">Full-data</th>
+              <th rowspan="1" style="text-align: left">Goal-only</th>
+              <th style="text-align: left">
+                <a href="https://openreview.net/forum?id=NeGDZeyjcKa">HLSM</a>
+              </th>
+              <td>20.27</td>
+              <!-- <td>27.24</td> -->
+              <td><b>18.28</b></td>
+              <!-- <td><b>31.24</b></td> -->
+              <td>31.24 – 70.17</td>
+            </tr>
+            <tr>
+              <th rowspan="4" style="text-align: left">Step-by-step</th>
+              <th style="text-align: left">
+                <a href="https://openaccess.thecvf.com/content/ICCV2021/html/Pashevich_Episodic_Transformer_for_Vision-and-Language_Navigation_ICCV_2021_paper.html">E.T.</a>
+              </th>
+              <td>8.57</td>
+              <!-- <td>18.56</td> -->
+              <td>7.32</td>
+              <!-- <td>20.87 </td> -->
+              <td>--</td>
+            </tr>
+            <tr>
+              <th style="text-align: left">
+                <a href="https://openaccess.thecvf.com/content/CVPR2022/html/Song_One_Step_at_a_Time_Long-Horizon_Vision-and-Language_Navigation_With_Milestones_CVPR_2022_paper.html">M-TRACK</a>
+              </th>
+              <td>16.29</td>
+              <!-- <td>22.60</td> -->
+              <td>17.29</td>
+              <!-- <td>28.98</td> -->
+              <td>--</td>
+            </tr>
+            <tr>
+              <th style="text-align: left">
+                <a href="https://openreview.net/forum?id=qI4542Y2s1D">FILM</a>
+              </th>
+              <td>27.80</td>
+              <!-- <td><b>38.52</b></td> -->
+              <td>--</td>
+              <!-- <td>--</td> -->
+              <td><b>54.93</b></td>
+            </tr>
+            <tr>
+              <th style="text-align: left">
+                <a href="https://arxiv.org/abs/2203.04637">LEBP</a>
+              </th>
+              <td><b>28.30</b></td>
+              <!-- <td>36.79</td> -->
+              <td>--</td>
+              <!-- <td>--</td> -->
+              <td>--</td>
+            </tr>
+            <tr height="2px">
+            </tr>
+            <tr>
+              <th rowspan="6" style="text-align: left">Few-shot</th>
+              <th rowspan="2" style="text-align: left">Goal-only</th>
+              <th style="text-align: left">
+                <a href="https://arxiv.org/abs/2212.04088">LLM-Planner (Static)</a>
+              </th>
+              <td>11.58</td>
+              <!-- <td>18.47</td> -->
+              <td>11.10</td>
+              <!-- <td>22.44</td> -->
+              <td>28.67</td>
+            </tr>
+            <tr>
+              <th style="text-align: left">
+                <a href="https://arxiv.org/abs/2212.04088">LLM-Planner</a>
+              </th>
+              <td>13.41</td>
+              <!-- <td>22.89</td> -->
+              <td>12.92</td>
+              <!-- <td>25.35</td> -->
+              <td>33.81 – 55.85</td>
+            </tr>
+            <tr>
+              <th rowspan="4" style="text-align: left">Step-by-step</th>
+              <th style="text-align: left">
+                <a href="https://openreview.net/forum?id=NeGDZeyjcKa">HLSM</a>
+              </th>
+              <td>0.61</td>
+              <!-- <td>3.72</td> -->
+              <td>0.00</td>
+              <!-- <td>1.86</td> -->
+              <td>0.00</td>
+            </tr>
+            <tr>
+              <th style="text-align: left">
+                <a href="https://openreview.net/forum?id=qI4542Y2s1D">FILM</a>
+              </th>
+              <td>0.20</td>
+              <!-- <td>6.71</td> -->
+              <td>0.00</td>
+              <!-- <td>9.65</td> -->
+              <td>0.00</td>
+            </tr>
+            <tr>
+              <th style="text-align: left">
+                <a href="https://arxiv.org/abs/2212.04088">LLM-Planner (Static)</a>
+              </th>
+              <td>15.83</td>
+              <!-- <td>20.99</td> -->
+              <td>14.26</td>
+              <!-- <td>26.12</td> -->
+              <td>43.24</td>
+            </tr>
+            <tr>
+              <th style="text-align: left">
+                <a href="https://arxiv.org/abs/2212.04088">LLM-Planner</a>
+              </th>
+              <td><b>16.42</b></td>
+              <!-- <td><b>23.37</b></td> -->
+              <td><b>15.36</b></td>
+              <!-- <td><b>29.88</b></td> -->
+              <td><b>46.59 – 68.31</b></td>
+            </tr>
+
+              
+
+          </table>
+        <!-- </div>
+		
+        <h2 class="title is-3">Related Work</h2>
+        <div class="content has-text-justified">
+          <p>
+            There is some related work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2209.11302">ProgPrompt</a> proposes a program-like prompt to use LLMs (e.g., GPT-3 and Codex) to generate an executable plan for robotic agents.
+          </p>
+          <p>
+             <a href="https://arxiv.org/abs/2207.04429">LM-Nav</a> prompts LLMs with raw navigation instructions and 3 in-context examples to generate a list of landmarks for a vision-language model to infer a joint probability distribution over landmarks and images.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2201.07207">Language planner</a> asks LLMs to generate a free-form instruction given a prompt with an in-context example and a goal. 
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2204.01691">Saycan</a> uses an LLM to score and rank a list of pre-defined admissible actions, which is then combined with an affordance function which assigns higher weights to the objects appearing in the current scene.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2206.02928">PLANner</a> uses commonsense-infused prompts to generate a static HLP and matches it to the closest admissible action using a Sentence-Transformer.
+          </p>
+        </div> -->
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@InProceedings{song2023llmplanner,
+  author    = {Song, Chan Hee and Wu, Jiaman and Washington, Clayton and Sadler, Brian M. and Chao, Wei-Lun and Su, Yu},
+  title     = {LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month     = {October},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+<section class="section" id="Acknowledgement">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgement</h2>
+    This research was supported by ARL W911NF2220144.
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="content has-text-justified">
+        <p>
+          Website template is borrowed from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
