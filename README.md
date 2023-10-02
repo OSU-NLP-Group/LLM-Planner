@@ -11,6 +11,7 @@ Check [project website](https://dki-lab.github.io/LLM-Planner/) for an overview 
 ## Release process:
 - [x] High level planner
   - [x] KNN dataset
+  - [x] KNN retriever
 - [ ] Low level planner
 - [ ] Few-shot trained models
 
