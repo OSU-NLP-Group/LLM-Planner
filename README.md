@@ -8,6 +8,11 @@ Check [project website](https://dki-lab.github.io/LLM-Planner/) for an overview 
 - Jul 23: LLM-Planner has been accepted to ICCV 2023! Catch us in Paris this October.
 - Jul 23: We will release the code soon! Thanks for your interests.
 
+## Release process:
+- [x] High level planner
+  - [x] KNN dataset
+- [ ] Low-level planner
+
 ## Citation Information
 
 If you find this code useful, please consider citing our paper:
