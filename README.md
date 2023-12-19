@@ -5,7 +5,7 @@ Code for [LLM-Planner](https://arxiv.org/abs/2212.04088).
 Check [project website](https://dki-lab.github.io/LLM-Planner/) for an overview and a demo.
 
 ## News:
-- Dec 23: LLM-Planner with support for an oracle low-level planner with a new easy-setup framework with ALFOWLRD backbone. We hope this codebase can serve as a foundation for building LLM or LMM based methods with ALFRED.
+- Dec 23: LLM-Planner with support for the oracle low-level planner with a new easy-setup framework with ALFOWLRD backbone. We hope this codebase can serve as a foundation for building LLM or LMM based methods on ALFRED.
 
 ## Release process:
 - [x] High level planner
@@ -30,11 +30,12 @@ export ALFWORLD_DATA="$(pwd)/alfworld/data"
 Install requirements: 
 
 ```
-# Conda or Python enviornment recommended 
+# Conda or Python enviornment recommended. Tested on Python 3.9.*
 # Install requirements for the AI2Thor simulator and ALFRED
 cd alfworld
 pip install .
-# Install requirements for LLM-Planner
+
+# Install requirements for the LLM-Planner
 cd ../src
 pip install -r requirements.txt
 ```
@@ -49,7 +50,7 @@ alfworld-download
 Sanity check on AI2Thor simulator
 ```
 python scripts/check_thor.py
-# This should return successful, if not your AI2Thor simulator is not set up correctly.
+# This should return successful, else your AI2Thor simulator is not set up correctly.
 ```
 
 Start evaluation with GPT-4
@@ -66,7 +67,6 @@ python run_eval.py --config gpt4_base_config.yaml
 Coming soon.
 
 
-
 <!-- Check `QA.md` for a complete list of questions and answers. -->
 
 ## Hardware
@@ -74,6 +74,7 @@ Coming soon.
 Tested on:
 - Mac M1
 - Ubuntu 18.04
+
 
 ## Citation Information
 
@@ -88,3 +89,16 @@ If you find this code useful, please consider citing our paper:
   year      = {2023},
 }
 ```
+
+## Acknowledgements
+
+We base our backbone simulator on [ALFWORLD](https://github.com/alfworld/alfworld/tree/master) and thank the authors for releasing the code.
+
+## License
+
+- LLM-Planner - MIT License
+- ALFWORLD - MIT License
+
+## Contact
+
+Questions or issues? File an issue or contact [Luke Song](https://chanh.ee)
