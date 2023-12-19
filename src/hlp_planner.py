@@ -1,6 +1,5 @@
 # GPT-3 HLP generator
 
-import pickle
 import pandas as pd
 import openai
 import random
@@ -10,8 +9,7 @@ from sentence_transformers.util import cos_sim
 
 
 #NOTE Add your openai API key here
-openai.api_key= ""
-
+openai.api_key= "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"
 
 ACT_TO_STR = {
     'OpenObject': "Open",
@@ -153,7 +151,7 @@ class LLM_HLP_Generator():
 
 
     #run GPT-3 on specified test set using the KNN prompts
-    def run_gpt3(self, prompt, logit_bias_text, engine='text-davinci-002', max_tokens=200):
+    def run_gpt3(self, prompt, logit_bias_text, engine='text-davinci-003', max_tokens=200):
         
         #GENERATE Relation Extraction PREDICTIONS
         gpt3_output = []
@@ -191,12 +189,22 @@ class LLM_HLP_Generator():
 
         return generated_hlp 
 
+    # Main point of entry for LLM HLP prompt generator, use in run_eval
+    def generate_gpt_prompt(self, curr_task, k):
+
+        prompt = self.generate_prompt(curr_task, k, removeNav=False, naturalFormat=False, includeLow=False)
+
+        return prompt 
+
     
     # Below are helper functions 
 
     # Change object list into object string:
     ## Example: ['Drawer', 'ButterKnife'] -> Drawer, ButterKnife
     def format_object_str(self, obj_list):
+
+        if not obj_list:
+            return ""
 
         obj_str = ", ".join(obj_list).lower()
         return obj_str
