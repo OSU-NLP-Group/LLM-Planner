@@ -1,0 +1,32 @@
+numpy #==1.16.2
+pandas
+opencv-python
+networkx
+h5py
+tqdm
+vocab
+revtok
+Pillow
+torch
+torchvision
+tensorboardX==1.8
+Click<7.2.0
+ai2thor==2.1.0
+transformers
+tokenizers
+scipy
+ipython
+matplotlib
+cython
+nltk
+pillow
+gym==0.15.4
+tqdm
+pipreqs
+h5py
+pyyaml
+pytz
+visdom
+pycocotools
+textworld
+fast-downward @ https://github.com/MarcCote/downward/archive/faster_replan.zip
