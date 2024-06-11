@@ -5,12 +5,25 @@ Code for [LLM-Planner](https://arxiv.org/abs/2212.04088).
 Check [project website](https://dki-lab.github.io/LLM-Planner/) for an overview and a demo.
 
 ## News:
-- Jul 23: LLM-Planner has been accepted to ICCV 2023! Catch us in Paris this October.
-- Jul 23: We will release the code soon! Thanks for your interests.
+- Jun 24: Due to an object grounding error in the simulator we are using, we revert the code into high-level plan generation only before fix is implemented.
+
+## Quickstart
+`
+python hlp_planner.py
+`
+
+This commands uses the KNN dataset to generate a high-level plan for an example task.
+Check the code out for more details.
+
+<!-- Check `QA.md` for a complete list of questions and answers. -->
+
+## Hardware
+
+Tested on:
+- Mac M1
+- Ubuntu 18.04
 
 ## Citation Information
-
-If you find this code useful, please consider citing our paper:
 
 ```
 @InProceedings{song2023llmplanner,
@@ -21,3 +34,17 @@ If you find this code useful, please consider citing our paper:
   year      = {2023},
 }
 ```
+
+## Acknowledgements
+
+We thank the authors of [ALFWORLD](https://github.com/alfworld/alfworld/tree/master) for releasing their code.
+
+## License
+
+- LLM-Planner - MIT License
+- ALFWorld - MIT License
+
+## Contact
+
+Questions or issues? File an issue or contact [Luke Song](https://chanh.ee)
+
