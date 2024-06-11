@@ -13,7 +13,7 @@ python hlp_planner.py
 `
 
 This commands uses the KNN dataset to generate a high-level plan for an example task.
-Check the code out for more details.
+Check out the code for more details.
 
 <!-- Check `QA.md` for a complete list of questions and answers. -->
 
