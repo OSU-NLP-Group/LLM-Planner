@@ -4,8 +4,8 @@ Code for [LLM-Planner](https://arxiv.org/abs/2212.04088).
 
 Check [project website](https://dki-lab.github.io/LLM-Planner/) for an overview and a demo.
 
-## News:
-- Jun 24: Due to an object grounding error in the simulator we are using, we revert the code into high-level plan generation only before fix is implemented.
+## What's Here
+- A high-level prompt generator and kNN dataset from our paper. Just bring your low-level controller (and an LLM)!
 
 ## Quickstart
 `
@@ -15,13 +15,13 @@ python hlp_planner.py
 This commands uses the KNN dataset to generate a high-level plan for an example task.
 Check out the code for more details.
 
-<!-- Check `QA.md` for a complete list of questions and answers. -->
+## Implementation Examples
+We provide examples of how the community has been using our work. We appreciate everyone's interest!
 
-## Hardware
-
-Tested on:
-- Mac M1
-- Ubuntu 18.04
+- **[DEDER](https://arxiv.org/abs/2412.11499)** – *ICML 2024*
+- **[ReALFRED](https://arxiv.org/abs/2407.18550)** – *ECCV 2024*
+- **[NeSyC](https://arxiv.org/abs/2503.00870)** – *ICLR 2025*
+- **[Socratic Planner](https://arxiv.org/abs/2404.15190)** – *ICRA 2025*
 
 ## Citation Information
 
@@ -37,12 +37,11 @@ Tested on:
 
 ## Acknowledgements
 
-We thank the authors of [ALFWORLD](https://github.com/alfworld/alfworld/tree/master) for releasing their code.
+We thank [OSUNLP](https://x.com/osunlp) for providing valuable feedback and suggestions.
 
 ## License
 
 - LLM-Planner - MIT License
-- ALFWorld - MIT License
 
 ## Contact
 
