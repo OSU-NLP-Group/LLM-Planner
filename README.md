@@ -20,6 +20,8 @@ We provide examples of how the community has been using our work. We appreciate 
 
 - **[DEDER](https://arxiv.org/abs/2412.11499)** – *ICML 2024*
 - **[ReALFRED](https://arxiv.org/abs/2407.18550)** – *ECCV 2024*
+- **[ExRAP](https://proceedings.neurips.cc/paper_files/paper/2024/hash/7bacd0ebd061d4694583ae0eb69ad15f-Abstract-Conference.html)** – *NeurIPS 2024*
+- **[FLARE](https://arxiv.org/abs/2412.17288)** – *AAAI 2025*
 - **[NeSyC](https://arxiv.org/abs/2503.00870)** – *ICLR 2025*
 - **[Socratic Planner](https://arxiv.org/abs/2404.15190)** – *ICRA 2025*
 
