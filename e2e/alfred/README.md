@@ -1,3 +1,8 @@
+Below is original README for ALFRED.
+
+The instructions here are not needed for LLM-Planner.
+
+------------------------
 # ALFRED
 
 [<b>A Benchmark for Interpreting Grounded Instructions for Everyday Tasks</b>](https://arxiv.org/abs/1912.01734)  
