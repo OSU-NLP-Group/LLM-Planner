@@ -12,7 +12,7 @@ An end-to-end agent that uses a LLM-Planner.
 
 ### Setup   
 
-Please be in the `e2e/` directory for the following commands~
+Please be in the `e2e/` directory to run the following commands.
 
 ```
 conda create -n llm-planner python=3.8 -y
