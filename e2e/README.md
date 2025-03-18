@@ -12,6 +12,8 @@ An end-to-end agent that uses a LLM-Planner.
 
 ### Setup   
 
+Please be in the `e2e/` directory for the following commands~
+
 ```
 conda create -n llm-planner python=3.8 -y
 conda activate llm-planner
@@ -36,7 +38,7 @@ This will check if your THOR environment is setup correctly.
 #### Agent Check
 
 ```
-python src/run_eval.py --config config/config_alfred.yaml --dry-run
+python src/run_eval.py --config config/config_alfred.yaml --dry_run
 ```
 This will run the agent on 3 tasks and save the results to `results/`.
 
