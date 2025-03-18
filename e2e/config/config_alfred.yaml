@@ -25,6 +25,7 @@ alfred:
     fast_epoch: false
     reward_config: alfred/models/config/rewards.json
     max_steps: 1000
+    pp_folder: pp
   x_display: '0'
   eval_set: 'valid_unseen'  # valid_seen, valid_unseen
   splits: alfred/data/splits/oct21.json
