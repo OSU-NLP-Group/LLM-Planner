@@ -68,4 +68,8 @@ Check out the `config/config_alfred.yaml` for more options.
 
 **A3:** This was tested on a MacBook Pro with an M1 Pro chip and on Ubuntu 22.04.
 
+**Q4:** How does the choice of LLM affect performance?
+
+**A4:** Since our prompt was optimized for text-davinci-003, we empirically found that the GPT-4 family has lower planning accuracy.We recommend using GPT-3.5-turbo, if possible, or modifying the prompt structure according to more recent works referenced in our README.
+
 
