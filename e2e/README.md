@@ -18,7 +18,6 @@ Please be in the `e2e/` directory to run the following commands.
 conda create -n llm-planner python=3.8 -y
 conda activate llm-planner
 pip install -r requirements.txt
-export OPENAI_API_KEY=<your-openai-api-key>
 ```
 
 ### Download ALFRED Dataset
@@ -27,6 +26,14 @@ export OPENAI_API_KEY=<your-openai-api-key>
 cd alfred/data
 bash download_data.sh json
 ```
+
+### Setup OpenAI Key
+```
+export OPENAI_API_KEY=<your-openai-api-key>
+```
+If you want to use a different LLM, modify the `llm()` function in `run_eval.py`.
+
+Note that the prompt will likely need further optimization if you plan to use other LLMs.
 
 ### Sanity Checks
 #### Simulator Check
