@@ -1,0 +1,15 @@
+ai2thor==2.1.0
+werkzeug==2.0.3 
+flask==2.0.3
+pyyaml
+opencv-python
+tqdm
+openai
+Pillow
+scipy
+networkx
+revtok
+torch
+vocab
+pandas
+sentence_transformers
