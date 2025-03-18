@@ -18,6 +18,7 @@ Please be in the `e2e/` directory to run the following commands.
 conda create -n llm-planner python=3.8 -y
 conda activate llm-planner
 pip install -r requirements.txt
+export OPENAI_API_KEY=<your-openai-api-key>
 ```
 
 ### Download ALFRED Dataset
@@ -47,7 +48,6 @@ This will run the agent on 3 tasks and save the results to `results/`.
 ### Full Evaluation
 
 ```
-export OPENAI_API_KEY=<your-openai-api-key>
 python src/run_eval.py --config config/config_alfred.yaml
 ```
 This will run the agent on all tasks and save the results to `results/`.
