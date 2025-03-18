@@ -1,4 +1,4 @@
-Below is original README for ALFRED.
+Below is the original README for ALFRED.
 
 The instructions here are not needed for LLM-Planner.
 
