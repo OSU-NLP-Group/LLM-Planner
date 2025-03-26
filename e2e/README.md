@@ -77,6 +77,6 @@ Check out the `config/config_alfred.yaml` for more options.
 
 **Q4:** How does the choice of LLM affect performance?
 
-**A4:** Since our prompt was optimized for text-davinci-003, we empirically found that the GPT-4 family has lower planning accuracy.We recommend using GPT-3.5-turbo, if possible, or modifying the prompt structure according to more recent works referenced in our README.
+**A4:** Our prompt was optimized for `text-davinci-003`, and we found that the GPT-4 family performs slightly worse in planning tasks. We recommend using `gpt-3.5-turbo` if possible, or adapting the prompt based on newer methods cited in our README.
 
 
